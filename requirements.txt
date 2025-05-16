@@ -1,7 +1,7 @@
-jax[cuda12_pip]
+jax[cuda12_pip]==0.4.28
 distrax
 optax
-flax
+flax==0.10.4
 numpy
 black
 pre-commit
@@ -14,3 +14,5 @@ chex
 matplotlib
 imageio
 craftax
+jaxlib==0.4.28
+jaxopt==0.8.3
