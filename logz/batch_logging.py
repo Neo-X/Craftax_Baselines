@@ -70,7 +70,7 @@ def batch_log(update_step, log, config):
                     if key == "episode_return":
                         buff_logger.add(np.mean(agg))
 
-                    buff_logger.add(np.mean(agg))
+                    # buff_logger.add(np.mean(agg))
 
                     agg_logs[key] = np.mean(agg)
                 else:
