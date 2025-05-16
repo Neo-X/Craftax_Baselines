@@ -671,15 +671,15 @@ if __name__ == "__main__":
     parser.add_argument(
         "--num_envs",
         type=int,
-        default=512,
+        default=1024,
     )
     parser.add_argument(
         "--total_timesteps", type=lambda x: int(float(x)), default=1e9
     )  # Allow scientific notation
     parser.add_argument("--lr", type=float, default=2e-4)
-    parser.add_argument("--num_steps", type=int, default=1)
-    parser.add_argument("--update_epochs", type=int, default=1)
-    parser.add_argument("--num_minibatches", type=int, default=1)
+    parser.add_argument("--num_steps", type=int, default=64)
+    parser.add_argument("--update_epochs", type=int, default=4)
+    parser.add_argument("--num_minibatches", type=int, default=8)
     parser.add_argument("--gamma", type=float, default=0.99)
     parser.add_argument("--gae_lambda", type=float, default=0.8)
     parser.add_argument("--clip_eps", type=float, default=0.2)
@@ -691,7 +691,7 @@ if __name__ == "__main__":
         "--anneal_lr", action=argparse.BooleanOptionalAction, default=True
     )
     parser.add_argument("--debug", action=argparse.BooleanOptionalAction, default=True)
-    parser.add_argument("--jit", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--jit", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--seed", type=int)
     parser.add_argument(
         "--use_wandb", action=argparse.BooleanOptionalAction, default=True

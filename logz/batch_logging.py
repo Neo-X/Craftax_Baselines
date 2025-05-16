@@ -3,9 +3,12 @@ import time
 import jax.numpy as jnp
 import numpy as np
 import wandb
+import logz.buffer_gap
 
 batch_logs = {}
 log_times = []
+
+buff_logger = logz.buffer_gap.BufferGapV2(buffer_size=1000, top_buffer_percet=0.05)
 
 
 def create_log_dict(info, config):
@@ -63,6 +66,12 @@ def batch_log(update_step, log, config):
                     "e_std",
                     "rnd_loss",
                 ]:
+                    # print(agg)
+                    if key == "episode_return":
+                        buff_logger.add(np.mean(agg))
+
+                    buff_logger.add(np.mean(agg))
+
                     agg_logs[key] = np.mean(agg)
                 else:
                     agg_logs[key] = np.array(agg)
@@ -79,5 +88,6 @@ def batch_log(update_step, log, config):
                 )
                 sps = steps_between_updates / dt
                 agg_logs["sps"] = sps
-
+        # print(agg_logs)
+        buff_logger.plot_gap(wandb, update_step)
         wandb.log(agg_logs)
