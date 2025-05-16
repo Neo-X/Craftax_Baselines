@@ -1,4 +1,4 @@
-jax[cuda12_pip]==0.4.28
+jax[cuda12]==0.4.28
 distrax
 optax
 flax==0.10.4
