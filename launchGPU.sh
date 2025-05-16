@@ -2,8 +2,8 @@
 ## Run with sbatch --array=1-3 launch.sh
 
 #SBATCH --partition=long                                # Ask for unkillable job
-#SBATCH --cpus-per-task=4                               # Ask for 2 CPUs
-#SBATCH --ntasks=2                                      # Ask for 2 tasks per GPU 
+#SBATCH --cpus-per-task=8                               # Ask for 2 CPUs
+#SBATCH --ntasks=1                                      # Ask for 2 tasks per GPU 
 #SBATCH --gres=gpu:1                                    # Ask for GPUs
 #SBATCH --mem=64G                                       # Ask for 10 GB of RAM
 #SBATCH --time=11:55:00                                  # The job will run for 3 hours
