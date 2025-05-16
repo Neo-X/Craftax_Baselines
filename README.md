@@ -2,6 +2,8 @@
  <img width="80%" src="https://raw.githubusercontent.com/MichaelTMatthews/Craftax_Baselines/main/images/logo.png" />
 </p>
 
+mila code --cluster mila playground/Craftax_Baselines/ --alloc --gres gpu:1 --mem=32G --cpus-per-gpu=16
+
 # Craftax Baselines
 
 This repository contains the code for running the baselines from the [Craftax paper](https://arxiv.org/abs/2402.16801).
