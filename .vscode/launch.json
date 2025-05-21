@@ -10,7 +10,16 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["--num_steps=1", "--update_epochs=1", "--no-jit", "--num_envs=512"]
+            "args": ["--num_steps=1", 
+                    "--update_epochs=1", 
+                    "--no-jit", 
+                    "--no-use_wandb", 
+                    "--num_envs=512", 
+                    // "--train_icm", 
+                    // "--icm_reward_coeff=0", 
+                    // "--use_e3b", 
+                    "--use_rnd"
+                ]
         }
     ]
 }

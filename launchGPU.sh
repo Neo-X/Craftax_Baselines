@@ -17,4 +17,4 @@ echo $ALG
 echo $ENV_ID
 
 ## srun is needed to run the multiple tasks per GPU
-python ppo.py --seed $SLURM_ARRAY_TASK_ID $ARGSS
+python $ALG --seed $SLURM_ARRAY_TASK_ID $ARGSS
