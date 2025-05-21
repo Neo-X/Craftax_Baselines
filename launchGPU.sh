@@ -10,7 +10,7 @@
 
 #SBATCH -o /network/scratch/g/glen.berseth/slurm-%j.out  # Write the log on scratch
 
-module load cudatoolkit/12.8 miniconda/3
+module load miniconda/3
 conda activate jaxrl
 
 echo $ALG
